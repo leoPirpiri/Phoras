@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> {{ titulo }} </title> <!--usando uma variável no jinja2-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!-- assume a tela disponível do site seja o tamanho da tela do dispositivo.-->
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/css/root.css"/>
+    <style type="text/css">
+    </style>
+    <!-- JavaScript assets -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" defer src="/assets/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark bg_secundario fixed-top">
+            <!-- Brand -->
+            <a class="navbar-brand" href="/">Phoras</a>
+            <ul class="navbar-nav text-right">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Méthodos</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item tx_primario" href="/ridder">Ridder</a>
+                    </div>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="/about">Sobre</a>
+                </li>
+            </ul>
+        </nav> 
+    </header>
+
+    {% block principal %}
+    {% endblock %}
+
+    <footer class="bg_secundario">
+        <div class="row mx-0">
+            <div class="col-sm-12 col-lg-6 text-center">
+                <br><strong><p>&reg;Copyright 2019. Todos direitos reservados.</p></strong>
+            </div>
+            <div class="col-sm-12 col-lg-6 text-right small pr-4">
+                <strong>
+                    <p>Desenvolvedores:
+                        <br>Equipe Phoras: <a class="tx_secundario" href="/about">sobre</a>
+                    </p>
+                </strong>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
