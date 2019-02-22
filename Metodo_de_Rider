@@ -1,4 +1,4 @@
-def ridders(F, xl, xr, errto, imax):
+def ridders(F, xe, xd, errto, imax):
      F = eval('lambda x:' + F)
     
      x = 0
@@ -7,46 +7,46 @@ def ridders(F, xl, xr, errto, imax):
      
      while errno > errto and iterCount < imax:
          
-          fr = F(xr)
-          fl = F(xl)
-          d0 = abs(fr - fl)
-          x = xr - fr*(xl-xr)/(fl - fr)
+          fd = F(xd)
+          fe = F(xe)
+          d0 = abs(fd - fe)
+          x = xd - fd*(xe-xd)/(fe - fd)
           fx = F(x)
  
-          a = (fl - fx)/(fx - fr)
-          b = (fl - fx)/(fl - a*fx)
+          a = (fe - fx)/(fx - fd)
+          b = (fe - fx)/(fe - a*fx)
           beta = b - 1
           alfa = a - 1
           lnb = beta - beta*beta/2 + beta*beta*beta/3
           lna = alfa - alfa*alfa/2 + alfa*alfa*alfa/3
-          root = xl + d0*lnb/lna
+          root = xe + d0*lnb/lna
           froot = F(root)
  
-          if fl * fx < 0:
-               if xl < root and root < x:
+          if fe * fx < 0:
+               if xe < root and root < x:
                     if fx * froot < 0:
-                         xl = root
-                         xr = x
+                         xe = root
+                         xd = x
                     else:
-                         xr = root
+                         xd = root
                else:
-                    xr = x
-          elif fl * fx > 0:
-               if x < root and root < xr:
+                    xd = x
+          elif fe * fx > 0:
+               if x < root and root < xd:
                     if fx * froot < 0:
-                         xl = x
-                         xr = root
+                         xe = x
+                         xd = root
                     else:
-                         xl = root
-                         fl = froot
+                         xe = root
+                         fe = froot
                else:
-                    xl = x
-                    fl = fx
+                    xe = x
+                    fe = fx
           else:
-               if fl == 0:
-                    x = xl
+               if fe == 0:
+                    x = xe
                break
  
-          errno = abs(xr - xl)
+          errno = abs(xd - xe)
           iterCount += 1
      return x
