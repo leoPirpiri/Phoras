@@ -1,16 +1,13 @@
+import pylab as pl
+import numpy as num
+
 def ridders(F, xe, xd, errto, imax):
-      """
-     Author: Pedro Garcia [sawp@sawp.com.br]
-     License: Creative Commons
-              <http ://creativecommons.org/licenses/by-nc-nd/2.5/br/>
-     """
-     
      F = eval('lambda x:' + F)
     
      x = 0
      iterCount = 0
      errno = 1     
-     
+     dominio=[]; imagem=[]
      while errno > errto and iterCount < imax:
          
           fd = F(xd)
@@ -28,6 +25,13 @@ def ridders(F, xe, xd, errto, imax):
           root = xe + d0*lnb/lna
           froot = F(root)
  
+          #Guarda valores de dominio e imagem
+          dominio.append(xe)
+          dominio.append(xd)
+          imagem.append(fe)
+          imagem.append(fd)
+    
+    
           if fe * fx < 0:
                if xe < root and root < x:
                     if fx * froot < 0:
@@ -55,4 +59,18 @@ def ridders(F, xe, xd, errto, imax):
  
           errno = abs(xd - xe)
           iterCount += 1
+     
+     
+     #Gráfico
+     pl.plot(dominio,imagem,color = 'red')
+     pl.scatter(dominio,imagem)
+     pl.legend
+     pl.grid()
+     #pl.axis([xe,xd,-,])
+     pl.title('Gráfico')
+     pl.savefig('Grafico.png')
+     pl.show()
+        
      return x
+     
+ridders('x**2', -5, 3,10**(-3),9)
