@@ -23,6 +23,51 @@ A primeira etapa do nosso trabalho foi o desenvolvimento de um site, utilizando 
 ###### Segunda parte:
 A segunda parte do trabalho foi o desenvolvimento do metódo de Ridder, cuja implementação foi toda feita em Python. Esse código roda no backend, mostrando os resultados no frontend.
 ###### Como funciona:
+O funcionamento do trabalho é feito através de uma união do Python com o HTML. Após o usuário inserir os dados no site, uma função do python é rodada gerando uma imagem com a plotagem de um gráfico.
+
+A implementação do Ridder é feito da seguinte da maneira:
+```
+fd = F(xd) 
+fe = F(xe)
+d0 = abs(fd - fe)
+x = xd - fd*(xe-xd)/(fe - fd)
+fx = F(x)
+
+a = (fe - fx)/(fx - fd)
+b = (fe - fx)/(fe - a*fx)
+beta = b - 1
+alfa = a - 1
+lnb = beta - beta*beta/2 + beta*beta*beta/3
+lna = alfa - alfa*alfa/2 + alfa*alfa*alfa/3
+root = xe + d0*lnb/lna
+froot = F(root)
+
+```
+_fd_  e _fe_ são as imagens dos limites laterais direito e esquerdo respectivamente.
+
+_d0_ é a diferença dos limites laterais em módulo
+
+_x_ é o método da falsa posição aplicado no ponto  _xe_ e _xd_
+
+_fx_ é aplicação do método da falsa posição na função
+
+A plotagem do gráfico foi feita da seguinte maneira: 
+
+```
+dominio = np.arange(-3.14, 3.14, 0.01)    # cria eixo x de dados
+imagem = F(dominio)                       # calcula eixo y de dados
+pl.plot(dominio,imagem,color = 'red')
+#pl.scatter(dominio,imagem)
+pl.legend
+pl.grid()
+# pl.axis([-1,1,-1,1])
+pl.title('Gráfico')
+pl.savefig('Grafico.png')
+pl.show()
+
+```
+_pl.plot_  utilizado para fazer a plotagem do gráfico
+_pl.savefig_ utilizado para salvar a plotagem em png e ser mostrada no site
 
 
 
