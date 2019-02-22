@@ -6,8 +6,12 @@ Para a primeira etapa dos trabalhos de cálculo numérico, o grupo Phoras ficou 
 
 ### O trabalho:
 Esse trabalho foi desenvolvido em 2 partes:
-    1. A primeira, é a parte do front. Onde foi desenvolvido um site utilizando HTML e  CSS.
-    2. A segunda, é a parte do back. Onde é feito a implementação do método de Ridder 
+###### Primeira parte:
+A primeira etapa do nosso trabalho foi o desenvolvimento de um site, utilizando HTML e CSS, para que o usuário tenha a sua disposição uma interface gráfica onde possa estar selecionando o método de Ridder e fazendo sua própria analise de forma interativa.
+###### Segunda parte:
+A segunda parte do trabalho foi o desenvolvimento do metódo de Ridder, cuja implementação foi toda feita em Python. Esse código roda no backend, mostrando os resultados no frontend.
+###### Como funciona:
+
 
 #### materiais baseados para implementação:
 [Sawp](http://www.sawp.com.br/blog/?p=563)
