@@ -13,8 +13,7 @@ def ridders(F, xe, xd, errto, imax):
     
      x = 0
      iterCount = 0
-     errno = 1     
-     dominio=[]; imagem=[]
+     errno = 1    
      while errno > errto and iterCount < imax:
          
           fd = F(xd)
