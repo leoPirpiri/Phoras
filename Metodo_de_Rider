@@ -1,24 +1,12 @@
-DEF ridders(F, xl, xr, errto=0.01, imax=1000):
-     """
-     Return the root of a function (Using the Ridder's Method)
- 
-     ridders(fun, xl, xr, imax, errto)
- 
-     * fun: Function where find the roots
-     * xl: left bound of interval
-     * xr: right bound of interval
-     * imax: max of iterations allowed
-     * errto: tolerated error
- 
-     Author: Pedro Garcia [sawp@sawp.com.br]
-     License: Creative Commons
-              <http ://creativecommons.org/licenses/by-nc-nd/2.5/br/>
-     """
+def ridders(F, xl, xr, errto, imax):
+     F = eval('lambda x:' + F)
+    
      x = 0
      iterCount = 0
      errno = 1     
- 
-     while errno > errto and iterCount < imax:          
+     
+     while errno > errto and iterCount < imax:
+         
           fr = F(xr)
           fl = F(xl)
           d0 = abs(fr - fl)
