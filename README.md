@@ -24,14 +24,6 @@ A primeira etapa do nosso trabalho foi o desenvolvimento de um site, utilizando 
 A segunda parte do trabalho foi o desenvolvimento do metódo de Ridder, cuja implementação foi toda feita em Python. Esse código roda no backend, mostrando os resultados no frontend.
 ###### Como funciona:
 
-```
-x = 0
-iterCount = 0
-errno = 1     
-dominio=[]; imagem=[]
-while errno > errto and iterCount < imax:
-
-```
 
 
 #### materiais baseados para implementação:
