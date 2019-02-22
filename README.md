@@ -67,6 +67,7 @@ pl.show()
 
 ```
 _pl.plot_  utilizado para fazer a plotagem do gráfico
+
 _pl.savefig_ utilizado para salvar a plotagem em png e ser mostrada no site
 
 
