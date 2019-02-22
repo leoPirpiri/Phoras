@@ -1,4 +1,10 @@
 def ridders(F, xe, xd, errto, imax):
+      """
+     Author: Pedro Garcia [sawp@sawp.com.br]
+     License: Creative Commons
+              <http ://creativecommons.org/licenses/by-nc-nd/2.5/br/>
+     """
+     
      F = eval('lambda x:' + F)
     
      x = 0
