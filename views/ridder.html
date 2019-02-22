@@ -10,69 +10,67 @@
 					<h4>Dados de entrada</h4>
 				</div><hr>
 				<div class="col-12 text-left">
-					<form>
+					<form method="POST">
 						<div class="form-group row">
-							<label for="valor1" class="col-sm-3 col-form-label">Entrada1: </label>
+							<label for="valor1" class="col-sm-3 col-form-label">Função: </label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control form-control-sm" id="valor1" placeholder="valor1">
+								<input type="text" class="form-control form-control-sm" id="valor1" placeholder="Valor da função" name="F">
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="valor2" class="col-sm-3 col-form-label">Entrada2: </label>
-							<div class="col-sm-9">
-								<input type="text" class="form-control form-control-sm" id="valor2" placeholder="valor2">
+							<label for="valor2" class="col-4 col-form-label">Intervalo a:</label>
+							<div class="col-3">
+								<input type="text" class="form-control form-control-sm" id="valor2" placeholder="Valor" name="xe">
+							</div>
+							<label for="valor3" class="col-2 col-form-label text-right">b:</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control form-control-sm" id="valor3" placeholder="Valor" name="xd">
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="valor3" class="col-sm-3 col-form-label">Entrada3: </label>
-							<div class="col-sm-9">
-								<input type="text" class="form-control form-control-sm" id="valor3" placeholder="valor3">
+							<label for="valor4" class="col-3 col-form-label">Tolerância: </label>
+							<div class="col-9">
+								<input type="text" class="form-control form-control-sm" id="valor4" placeholder="Tolerância" name="errto">
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="valor4" class="col-sm-3 col-form-label">Entrada4: </label>
-							<div class="col-sm-9">
-								<input type="text" class="form-control form-control-sm" id="valor4" placeholder="valor4">
+							<label for="valor5" class="col-5 col-form-label">Iterações Máx.: </label>
+							<div class="col-7">
+								<input type="text" class="form-control form-control-sm" id="valor5" placeholder="Iterações" name="imax">
 							</div>
 						</div>
-						<div class="form-group row">
-							<label for="valor5" class="col-sm-3 col-form-label">Entrada4: </label>
-							<div class="col-sm-9">
-								<input type="text" class="form-control form-control-sm" id="valor5" placeholder="valor5">
-							</div>
+						<div class="text-right">
+							<button id="btnSubmit" type="submit" class="btn btn-info">Enviar</button>
 						</div>
-							Formulário de entrada vou organizar depois.
 					</form>
 				</div>
-				<br><br>
 				<div class="col-12">
 					<h4> Detalhes </h4>
 				</div><hr>
-				<div class="col-12 text-left">
+				<div class="col-12 text-left" style="min-height: 200px;">
 					<div id="msg" class="alert alert-info" role="alert">
-						Pontecial mensagem de erro ou auxílio ao usuário
+						Preencha os campos com os valores da função, intervalo inicial, tolerância, número de iterações máxima. Depois click em enviar para obter os valores da função.
 					</div>
 					<div id="resultados">
+						{{msg}}
 					</div>
 				</div>
 			</div>
 			<div id="conteudo" class="col-lg-8 col-sm-12" style="border-left: solid 1px;">
 				<h4> Plotagem do gráfico da função</h4><hr>
 				<div id="grafico" class="col-12">
-					<br><br><br>
-					<br><br><br>
-					<br><br><br>
-					<br><br><br>
-					<br><br><br>
-					<br><br><br>
+					
 				</div>
 				<div class="row">
 					<div class="col-sm-12 col-lg-6">
-						<span>*Informações relevantes ao resultado a parti da entrada fornecida.</span>
+						<span></span>
 					</div>
 					<div class="col-sm-12 col-lg-6">
-						<div id="legenda" class="col-sm-12"></div>
-						<div class="col-sm-12">Algum tipo de legenda
+						<div id="legenda" class="col-sm-12">
+							
+						</div>
+						<div class="col-sm-12">
+
 						</div>
 					</div>
 				</div>
@@ -80,5 +78,6 @@
 		</div>
 	</div>
 </main>
+<script src = "assets\js\ridder.js"></script> 
 
 {% endblock %}

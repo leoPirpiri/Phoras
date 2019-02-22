@@ -20,6 +20,9 @@
 #apresentacao {
     padding-top: 3px;
 }
+.hidden {
+    display: none;
+}
 html, body {
     width: 100%;
     height: 100%;

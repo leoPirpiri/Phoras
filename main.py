@@ -25,6 +25,9 @@ class MtRidderHandler(Handler):
     def get(self):
         self.render("ridder.html", titulo = "Phoras - Ridder")
 
+    def post(self):
+        self.render("ridder.html", titulo = "Phoras - Ridder", msg = "Teste")
+
 class AboutHandler(Handler):
     def get(self):
         self.render("sobre.html", titulo = "Phoras - sobre a equipe")
