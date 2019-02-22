@@ -1,8 +1,15 @@
 import pylab as pl
-import numpy as num
+import numpy as np
 
 def ridders(F, xe, xd, errto, imax):
      F = eval('lambda x:' + F)
+     
+     """
+     Author: Pedro Garcia [sawp@sawp.com.br]
+     License: Creative Commons
+              <http ://creativecommons.org/licenses/by-nc-nd/2.5/br/>
+     Foram feitas Alterações ao projeto
+     """
     
      x = 0
      iterCount = 0
@@ -26,10 +33,10 @@ def ridders(F, xe, xd, errto, imax):
           froot = F(root)
  
           #Guarda valores de dominio e imagem
-          dominio.append(xe)
-          dominio.append(xd)
-          imagem.append(fe)
-          imagem.append(fd)
+         # dominio.append(xe)
+          #dominio.append(xd)
+          #imagem.append(fe)
+         # imagem.append(fd)
     
     
           if fe * fx < 0:
@@ -62,15 +69,18 @@ def ridders(F, xe, xd, errto, imax):
      
      
      #Gráfico
+     dominio = np.arange(-3.14, 3.14, 0.01)    # cria eixo x de dados
+     imagem = F(dominio)                       # calcula eixo y de dados
      pl.plot(dominio,imagem,color = 'red')
-     pl.scatter(dominio,imagem)
+     #pl.scatter(dominio,imagem)
      pl.legend
      pl.grid()
-     #pl.axis([xe,xd,-,])
+    # pl.axis([-1,1,-1,1])
      pl.title('Gráfico')
      pl.savefig('Grafico.png')
      pl.show()
         
-     return x
-     
-ridders('x**2', -5, 3,10**(-3),9)
+     return print('A raiz eh',x)
+
+    
+ridders('x**2-4', -5, 0,10**(-512),1000)
