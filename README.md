@@ -9,6 +9,7 @@ Em seguida, calcula a única função exponencial que transforma a função em u
 ![](https://i.imgur.com/BtiXu0N.png)
 
 Esta função quadrática pode ser resolvida por:
+
 ![](https://i.imgur.com/OQyMZK9.png)
 
 O método da falsa posição é aplicado para os pontos f(x1), f(x3)eQ, f(x2)e2Q, gerando um novo valor  para a raiz, o x4, que será utilizado como um dos dois valores na próxima etapa de iteração.  
