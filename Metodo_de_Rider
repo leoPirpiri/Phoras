@@ -18,6 +18,9 @@ def ridders(F, xe, xd, errto, imax):
          
           fd = F(xd)
           fe = F(xe)
+	  if(fe==fd):
+	      print("não eh possivel fazer divisão por zero! ")
+	      break
           d0 = abs(fd - fe)
           x = xd - fd*(xe-xd)/(fe - fd)
           fx = F(x)
